@@ -1,5 +1,5 @@
 ---
-import CompatibilityList from "~/components/compatibility-list.astro";
+import CompatibilityList from "~/components/technology-list.astro";
 import ContentSection from "~/components/content-section.astro";
 import type { CompatibilityItem } from "~/types";
 
@@ -70,11 +70,10 @@ const platforms: Array<CompatibilityItem> = [
 ];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="Technologien" id="technology">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    Wir bieten ein <span class="text-primary">breites Spektrum</span> an{" "}
+    <span class="text-primary">state-of-the-art</span> Technologien
   </Fragment>
   <CompatibilityList
     items={frameworks}

@@ -1,12 +1,16 @@
-/* TODO: consider creating <Button> and <GradientText> components */
+/* TODO: consider creating <Button> and <GradientText> components 
+    Save this file without formatting!!!
+*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
 a,
 .btn {
-  @apply transition-colors duration-200;
-  @apply hover:text-secondary;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+    @apply transition-colors duration-200;
+    @apply hover:text-secondary;
+    @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-primary to-secondary;
 }

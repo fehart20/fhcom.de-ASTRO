@@ -1,32 +1,22 @@
-[
-  {
-    "title": "PoliNations",
-    "image": "./images/polinations.png",
-    "url": "https://polinations.com/"
-  },
-  {
-    "title": "Astro Docs",
-    "image": "./images/astro-docs.png",
-    "url": "https://docs.astro.build/"
-  },
-  {
-    "title": "<div>RIOTS",
-    "image": "./images/divriots.png",
-    "url": "https://divriots.com/"
-  },
-  {
-    "title": "Designcember",
-    "image": "./images/designcember.png",
-    "url": "https://designcember.com/"
-  },
-  {
-    "title": "The Firebase Blog",
-    "image": "./images/firebase-blog.png",
-    "url": "https://firebase.blog/"
-  },
-  {
-    "title": "Corset",
-    "image": "./images/corset.png",
-    "url": "https://corset.dev/"
-  }
+[{
+        "title": "HöGy Nürtingen",
+        "image": "./images/hgy-homepage.jpeg",
+        "url": "https://hoegy.de/",
+        "description": "Gestaltung und Wartung des Internetauftritts.",
+        "technologies": "WordPress // Impreza // Slider Revolution"
+    },
+    {
+        "title": "HöGy Entdeckertour",
+        "image": "./images/hgy-entdeckertour.jpeg",
+        "url": "https://entdeckertour.hoegy.de/",
+        "description": "Erstellung, Gestaltung und Produktion der gesamten virtuellen Entdeckertour.",
+        "technologies": "HTML5 // CSS // JavaScript // Google Web Designer // DaVinci Resolve"
+    },
+    {
+        "title": "HöGy Weihnachtskonzert",
+        "image": "./images/hgy-weihnachtskonzert.jpeg",
+        "url": "https://youtu.be/-f5UwAeFEkM",
+        "description": "",
+        "technologies": "Behringer X32 Producer // Reaper // DaVinci Resolve"
+    }
 ]
