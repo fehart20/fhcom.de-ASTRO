@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
+    "@jop-software/astro-matomo": "^1.1.0",
     "daisyui": "^2.51.3",
     "micromodal": "^0.4.10",
     "sharp": "^0.31.2",
