@@ -1,7 +1,7 @@
 /* TODO: consider creating <Button> and <GradientText> components 
     Save this file without formatting!!!
 */
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("./font/Rubik.css");
 
 a,
 .btn {
