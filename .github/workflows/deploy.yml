@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
           
       - name: Use pnpm
-        uses: pnpm/action-setup@v2.2.4
+        uses: npm/action-setup@v2.2.4
         with:
           version: 7
           
@@ -31,13 +31,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+          cache: npm
           
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
         
       - name: Build project
-        run: pnpm run build
+        run: npm run build
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
