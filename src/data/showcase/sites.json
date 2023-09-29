@@ -18,5 +18,19 @@
         "url": "https://youtu.be/-f5UwAeFEkM",
         "description": "",
         "technologies": "Behringer X32 Producer // Reaper // DaVinci Resolve"
+    },
+    {
+        "title": "TSVO Skiabteilung",
+        "image": "./images/tsvoski-homepage.jpeg",
+        "url": "https://ski-tsvo.de/",
+        "description": "",
+        "technologies": "WordPress // BeTheme // Redis Object Cache // Slider Revolution"
+    },
+    {
+        "title": "TSVO Skiabteilung Buchungssystem",
+        "image": "./images/tsvoski-buchungssystem.jpeg",
+        "url": "https://buchung.ski-tsvo.de/",
+        "description": "",
+        "technologies": "pretix"
     }
 ]
