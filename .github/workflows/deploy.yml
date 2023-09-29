@@ -1,0 +1,52 @@
+name: deploy changes
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  #schedule:
+   # - cron: '0 0 * * *' # Everyday at 12am
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    strategy:
+      matrix:
+        node-version: [18]
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+          
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+          
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Build project
+        run: pnpm run build
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding known_hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        run: rsync -avz ./test/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.PUB_DIR }}
