@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: SSH deploy
+      - name: SSH deploy to server
         uses: easingthemes/ssh-deploy@v4.1.9
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -31,3 +31,10 @@ jobs:
           REMOTE_USER: ${{ secrets.SSH_USER }}
           REMOTE_PORT: ${{ secrets.SSH_PORT }}
           TARGET: ${{ secrets.PUB_DIR }}
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
+          SCRIPT_AFTER: |
+            whoami
+            ls -al
+            echo $RSYNC_STDOUT
