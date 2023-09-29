@@ -9,36 +9,25 @@ on:
    # - cron: '0 0 * * *' # Everyday at 12am
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions: write-all
-    strategy:
-      matrix:
-        node-version: [18]
+    steps:
+      - name: Checkout repository using git
+        uses: actions/checkout@v4
+      - name: Install and build site
+        uses: withastro/action@v1
+
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-                  
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: SSH deploy
+        uses: easingthemes/ssh-deploy@v4.1.9
         with:
-          node-version: ${{ matrix.node-version }}
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Build project
-        run: npm run build
-
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: unnecessary
-
-      #- name: Adding known_hosts
-      #  run: ssh-keyscan -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
-
-      - name: Deploy with rsync
-        run: rsync -avz ./test/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.PUB_DIR }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          TARGET: ${{ secrets.PUB_DIR }}
