@@ -15,7 +15,7 @@ export default defineConfig({
     // If the configuration is empty, every page view gets tracked.
     matomo({
       baseUrl: "https://analytics.fhaf.de/",
-      siteId: 3,
+      siteId: 1,
     }),
   ],
   vite: {
