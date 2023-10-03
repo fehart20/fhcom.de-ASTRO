@@ -34,11 +34,11 @@
     "description": "",
     "technologies": "pretix"
   },
-    {
+  {
     "title": "Systemüberwachung",
     "image": "./images/tsvoski-uptimekuma.jpeg",
     "url": "https://status.fhaf.de/status/tsvo-ski",
     "description": "",
     "technologies": "Uptime Kuma"
-  },
+  }
 ]
